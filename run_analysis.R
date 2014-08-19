@@ -42,16 +42,23 @@ run_analysis <- function() {
         #Appropriately labels the data set with descriptive variable names. DONE EARLIER
         
         #output the first tidy dataset
-        dir1 <- paste0(wd, "/", "tidyDataSet1.txt")
-        write.table(lightdata, dir1 ,row.names = FALSE)
+        #dir1 <- paste0(wd, "/", "tidyDataSet1.txt")
+        #write.table(lightdata, dir1 ,row.names = FALSE)
         
         #create the second tidy dataset
-        suppressWarnings(summary <- aggregate(fulldata, by=list(fulldata$activity,fulldata$subjects),mean))
+        suppressWarnings(summary <- aggregate(lightdata, by=list(lightdata$subjects,lightdata$activity),mean))
         summary$subjects <- NULL
         summary$activity <- NULL
+        
+        colnames(summary)[colnames(summary) == "Group.2"] <- "activity"
+        colnames(summary)[colnames(summary) == "Group.1"] <- "subject"
         
         #output the second tidy dataset
         dir2 <- paste0(wd, "/", "tidyDataSet2.txt")
         write.table(summary, dir2, row.names = FALSE)
+
+
+
+
 
 }
