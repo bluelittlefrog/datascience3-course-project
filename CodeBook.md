@@ -7,7 +7,7 @@ output: html_document
 
 * The dataset was downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 * A description of the primary data is available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-* The preprocessing of the data is explained in the README.me file provided by the authors.
+* The preprocessing of the data and units of the variables are explained in the README.me file provided by the authors.
 
 
 ### subject
@@ -70,3 +70,7 @@ output: html_document
 ### fBodyBodyGyroMag.std
 ### fBodyBodyGyroJerkMag.mean
 ### fBodyBodyGyroJerkMag.std
+
+
+###Analysis
+The aggregate function was used to summarize the data and present the average of each variable for each activity and each subject.
